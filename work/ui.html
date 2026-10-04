@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#efede7">
+  <title>科创-凡 · 荧光能量回路 / EGG 06</title>
+  <!-- STYLE -->
+</head>
+<body>
+  <div class="app-shell">
+    <header class="masthead">
+      <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 44 48" fill="none"><path d="M22 2 41 13V35L22 46 3 35V13Z" fill="#213322"/><path d="M22 5 38 14V33L22 43 6 33V14Z" stroke="#9aff00" stroke-width="1.2"/><path d="M12 32V16H17V23L28 12H35L23 24 33 34H25L17 26V32Z" fill="#9aff00"/><path d="M24 33V27H35" stroke="#9aff00" stroke-width="2"/></svg></div>
+      <div class="title-lockup"><div class="eyebrow">EGG / 06 · NEON</div><h1>蛋形变形机器人</h1></div>
+      <div class="local-label"><span></span>本地 3D 交互</div>
+    </header>
+
+    <main class="workspace">
+      <section class="stage" id="viewport" aria-label="可旋转和缩放的三维机器人">
+        <div class="stage-top">
+          <div class="stage-kicker"><span class="tiny-line"></span>形态探索</div>
+          <div class="view-switch" role="group" aria-label="切换视角">
+            <button type="button" id="btnViewFront" title="正面视角">正面</button>
+            <button type="button" id="btnViewTop" title="俯视视角">俯视</button>
+            <button type="button" id="btnViewIso" class="active" title="透视视角" aria-pressed="true">透视</button>
+          </div>
+        </div>
+        <div id="sceneBrand" class="scene-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 92" fill="none" role="img" aria-label="科创-凡 KECHUANG FAN">
+  <title>科创-凡 · KECHUANG FAN</title>
+  <desc>荧光绿能量回路与几何 KF 标志，中文字形已转换为矢量轮廓。</desc>
+  <path d="M14 1H306L319 14V78L306 91H14L1 78V14Z" fill="#15201b" fill-opacity=".97" stroke="#75a43f" stroke-opacity=".6"/>
+  <path d="M14 1H73M1 14V34M306 91H267M319 78V58" stroke="#9aff00" stroke-width="2"/>
+  <path d="M42 17 67 31V61L42 75 17 61V31Z" stroke="#9aff00" stroke-width="1.7"/>
+  <path d="M27 56V34H34V44L49 29H58L43 44 56 58H46L34 46V56Z" fill="#9aff00"/>
+  <path d="M43 58V49H60M49 36H60" stroke="#9aff00" stroke-width="3"/>
+  <path d="M20 45H13M42 18V11M66 45H74M42 74V81" stroke="#759b50" stroke-width="1"/>
+  <circle cx="17" cy="31" r="2.5" fill="#d2ff91"/><circle cx="67" cy="61" r="2.5" fill="#d2ff91"/>
+  <path d="M103.42 38.54 L115.16 37.48 L115.16 15.46 L120.25 15.46 L120.25 37.01 L125.17 36.56 L125.57 41.15 L120.25 41.63 L120.25 50.97 L115.16 50.97 L115.16 42.08 L104.03 43.1 Z M89.51 39.63 C91.81 36.85 93.58 33.8 94.84 30.49 L89.83 30.49 L89.83 25.83 L95 25.83 L95 21.78 L90.63 22.18 C90.39 20.54 90.11 19.1 89.79 17.88 C94.78 17.49 99.38 17 103.6 16.39 L104.97 20.62 C103.34 20.85 101.59 21.07 99.7 21.29 L99.7 25.83 L104.39 25.83 L104.39 30.49 L99.7 30.49 L99.7 33.59 L101.43 31.97 C103.16 33.51 104.63 34.91 105.84 36.16 L102.8 38.91 C101.61 37.51 100.57 36.33 99.7 35.38 L99.7 50.97 L95 50.97 L95 38.76 C93.87 41.15 92.59 43.36 91.17 45.41 C90.76 43.82 90.2 41.89 89.51 39.63 Z M108.76 18.02 C110.6 19.37 112.63 21.06 114.87 23.08 L111.51 26.4 C109.7 24.48 107.78 22.71 105.73 21.09 Z M107.54 27.2 C109.66 28.76 111.72 30.46 113.71 32.29 L110.32 35.58 C108.68 33.85 106.73 32.1 104.46 30.34 Z M140.92 15.71 L140.24 16.58 C142.55 18.98 144.92 21.6 147.35 24.42 L143.49 27.92 C141.68 25.3 139.78 22.83 137.78 20.51 C136.21 22.95 134.05 25.44 131.28 27.99 L145.04 27.99 C144.99 29.22 144.89 31.81 144.72 35.76 C144.62 39.3 142.79 41.07 139.22 41.07 C138.02 41.12 136.91 41.12 135.9 41.07 C135.66 38.78 135.48 37.32 135.36 36.67 C136.03 36.74 137.24 36.79 138.97 36.81 C139.69 36.76 140.07 36.29 140.09 35.4 C140.16 34.68 140.22 33.65 140.27 32.33 L134.09 32.33 L134.09 43.39 C134.09 44.9 134.77 45.65 136.12 45.63 L139.98 45.63 C141.14 45.63 141.79 45.06 141.93 43.93 C142.01 43.45 142.12 42.48 142.26 41.04 C143.9 41.42 145.58 41.77 147.32 42.08 C147.01 43.96 146.7 45.46 146.42 46.57 C145.91 48.81 144.07 49.93 140.89 49.93 L135.39 49.93 C131.37 49.93 129.36 48.28 129.36 44.98 L129.36 29.73 C129.02 30.02 128.67 30.31 128.31 30.59 C127.9 29.53 127.19 28.01 126.18 26.01 C130.42 22.37 133.32 18.94 134.89 15.71 Z M155.85 15.92 L160.65 15.92 L160.65 43.75 C160.65 48.16 159.16 50.42 156.17 50.54 C154.29 50.59 152.5 50.61 150.79 50.61 C150.59 48.97 150.25 47.26 149.74 45.48 C150.75 45.53 152.14 45.55 153.89 45.55 C155.2 45.55 155.85 44.67 155.85 42.92 Z M153.03 41.07 L148.26 41.07 L148.26 19.25 L153.03 19.25 Z M176.46 37.5 L165.78 37.5 L165.78 33.38 L176.46 33.38 Z M210.73 37.03 C212.49 37.68 214.13 38.19 215.65 38.58 C215.43 41.28 215.15 43.6 214.81 45.55 C214.28 48.61 212.5 50.14 209.47 50.14 L206.43 50.14 C202.99 50.07 201.26 48.02 201.26 44 L201.26 21.85 L191.15 21.85 L191.15 33.41 C191.15 41.43 188.69 47.25 183.78 50.87 C182.6 49.47 181.21 48.05 179.62 46.6 C183.74 43.86 185.8 38.98 185.8 31.97 L185.8 17.01 L206.97 17.01 L206.97 42.92 C206.97 44.19 207.4 44.82 208.24 44.79 L208.96 44.79 C209.78 44.79 210.24 44.23 210.33 43.1 C210.45 42.13 210.59 40.11 210.73 37.03 Z M195.59 27.45 C196.94 29.79 198.7 33.14 200.87 37.5 L196.03 39.7 C194.7 36.47 193.11 33.04 191.26 29.4 Z" fill="#ecffd8"/>
+  <path d="M93.51 63.32 L93.66 61.82 L96.79 57.84 L98.02 57.84 Z M92.88 64.94 L92.88 57.84 L93.88 57.84 L93.88 64.94 Z M97.1 64.94 L94.84 61.15 L95.63 60.42 L98.32 64.94 Z M101.98 64.94 L101.98 57.84 L102.98 57.84 L102.98 64.94 Z M102.46 64.94 L102.46 63.99 L106.54 63.99 L106.54 64.94 Z M102.46 61.89 L102.46 60.94 L106 60.94 L106 61.89 Z M102.46 58.79 L102.46 57.84 L106.54 57.84 L106.54 58.79 Z M112.97 65.01 C112.47 65.01 112.04 64.9 111.67 64.68 C111.3 64.46 111.01 64.15 110.8 63.76 C110.6 63.36 110.5 62.9 110.5 62.37 L110.5 60.42 C110.5 59.88 110.6 59.42 110.8 59.02 C111.01 58.62 111.3 58.32 111.67 58.1 C112.04 57.88 112.47 57.77 112.97 57.77 C113.38 57.77 113.75 57.85 114.09 58.03 C114.43 58.21 114.72 58.45 114.95 58.77 C115.18 59.08 115.33 59.45 115.41 59.88 L115.41 59.88 L114.39 59.88 L114.39 59.88 C114.33 59.65 114.23 59.45 114.08 59.28 C113.94 59.11 113.77 58.97 113.57 58.88 C113.38 58.79 113.18 58.74 112.97 58.74 C112.53 58.74 112.18 58.89 111.91 59.2 C111.65 59.51 111.52 59.91 111.52 60.42 L111.52 62.37 C111.52 62.87 111.65 63.28 111.91 63.58 C112.18 63.89 112.53 64.04 112.97 64.04 C113.28 64.04 113.57 63.94 113.84 63.75 C114.11 63.55 114.3 63.27 114.39 62.9 L114.39 62.9 L115.41 62.9 L115.41 62.9 C115.33 63.33 115.18 63.7 114.94 64.01 C114.71 64.33 114.43 64.57 114.09 64.75 C113.75 64.92 113.38 65.01 112.97 65.01 Z M123.55 64.94 L123.55 57.84 L124.54 57.84 L124.54 64.94 Z M119.51 64.94 L119.51 57.84 L120.51 57.84 L120.51 64.94 Z M120.13 61.92 L120.13 60.97 L124.08 60.97 L124.08 61.92 Z M131.38 65.01 C130.59 65.01 129.98 64.78 129.54 64.32 C129.11 63.86 128.89 63.21 128.89 62.37 L128.89 57.84 L129.89 57.84 L129.89 62.41 C129.89 62.92 130.02 63.32 130.28 63.61 C130.54 63.89 130.9 64.03 131.38 64.03 C131.86 64.03 132.23 63.89 132.49 63.61 C132.75 63.32 132.88 62.92 132.88 62.41 L132.88 57.84 L133.88 57.84 L133.88 62.37 C133.88 63.21 133.66 63.86 133.23 64.32 C132.79 64.78 132.17 65.01 131.38 65.01 Z M137.54 64.94 L140.16 57.84 L141.01 57.84 L143.63 64.94 L142.55 64.94 L140.58 59.21 L138.62 64.94 Z M138.75 63.38 L138.75 62.43 L142.48 62.43 L142.48 63.38 Z M147.39 64.93 L147.39 57.84 L148.29 57.84 L151.76 63.33 L151.64 63.46 L151.64 57.84 L152.63 57.84 L152.63 64.93 L151.72 64.93 L148.25 59.53 L148.37 59.4 L148.37 64.93 Z M159.47 61.12 L161.93 61.12 L161.93 62.36 C161.93 62.89 161.82 63.36 161.62 63.76 C161.41 64.15 161.12 64.46 160.75 64.68 C160.38 64.9 159.94 65.01 159.44 65.01 C158.94 65.01 158.5 64.91 158.12 64.7 C157.74 64.5 157.45 64.2 157.24 63.83 C157.03 63.45 156.93 63.01 156.93 62.51 L156.93 60.42 C156.93 59.88 157.03 59.42 157.24 59.02 C157.44 58.62 157.73 58.32 158.1 58.1 C158.47 57.88 158.91 57.77 159.41 57.77 C159.83 57.77 160.2 57.85 160.54 58.03 C160.88 58.21 161.17 58.45 161.4 58.77 C161.63 59.08 161.79 59.45 161.87 59.88 L161.87 59.88 L160.79 59.88 L160.79 59.88 C160.7 59.51 160.52 59.23 160.26 59.03 C159.99 58.84 159.71 58.74 159.41 58.74 C158.97 58.74 158.61 58.89 158.35 59.2 C158.08 59.51 157.95 59.91 157.95 60.42 L157.95 62.51 C157.95 62.97 158.08 63.35 158.36 63.62 C158.63 63.9 158.99 64.04 159.44 64.04 C159.88 64.04 160.24 63.89 160.51 63.6 C160.77 63.31 160.91 62.9 160.91 62.38 L160.91 62.07 L159.47 62.07 Z M171.59 64.94 L171.59 57.84 L172.59 57.84 L172.59 64.94 Z M172.08 61.95 L172.08 61 L175.53 61 L175.53 61.95 Z M172.08 58.79 L172.08 57.84 L176.06 57.84 L176.06 58.79 Z M179.19 64.94 L181.8 57.84 L182.65 57.84 L185.27 64.94 L184.2 64.94 L182.23 59.21 L180.26 64.94 Z M180.39 63.38 L180.39 62.43 L184.13 62.43 L184.13 63.38 Z M189.03 64.93 L189.03 57.84 L189.93 57.84 L193.41 63.33 L193.29 63.46 L193.29 57.84 L194.28 57.84 L194.28 64.93 L193.36 64.93 L189.9 59.53 L190.02 59.4 L190.02 64.93 Z" fill="#a4c385"/>
+  <path d="M92 77H259L265 71H289" stroke="#79de08" stroke-width="1"/>
+  <path d="M275 25H299M275 33H291" stroke="#9aff00" stroke-width="2"/>
+  <path d="M295 69H300V74H295Z" fill="#9aff00"/>
+</svg></div>
+        <div class="stage-bottom">
+          <div class="pose-caption"><span class="state-dot"></span><span id="modeLabel">六足展开</span><span id="contactLabel" style="font-size:10px;opacity:.64;margin-left:10px">支撑足 6 / 6</span></div>
+          <div class="orbit-hint"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="5.5" y="2.5" width="9" height="15" rx="4.5" stroke="currentColor" stroke-width="1.2"/><path d="M10 5.5v3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>拖动旋转 · 滚轮缩放</span></div>
+        </div>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+        <div id="busy" class="busy"><div class="busy-egg" aria-hidden="true"></div><p>正在构建机器人</p><span>即将进入三维空间</span></div>
+      </section>
+
+      <aside class="controls" aria-label="机器人控制面板">
+        <div class="control-section first-section">
+          <div class="section-heading"><span class="section-index">01</span><h2>形态</h2><span class="section-aside">收拢 / 展开</span></div>
+          <div class="mode-switch" role="group" aria-label="选择机器人形态">
+            <button id="btnClosed" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C8.1 3 5 10.1 5 15c0 4 2.6 6 7 6s7-2 7-6c0-4.9-3.1-12-7-12Z" stroke="currentColor" stroke-width="1.4"/><path d="M12 3v18M5.4 16.2c4.1 1.8 9.1 1.8 13.2 0" stroke="currentColor" stroke-width="1.1"/></svg><span>蛋形收拢</span></button>
+            <button id="btnOpen" type="button" class="active" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 15c0-5 2-10 5-10s5 5 5 10H7Z" stroke="currentColor" stroke-width="1.4"/><path d="m7 11-4 1-1 4m5-1-2 4H2m15-8 4 1 1 4m-5-1 2 4h3m-12-4-1 6m5-6 1 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>六足展开</span></button>
+          </div>
+          <div class="slider-label"><label for="transform">展开程度</label><output id="transformValue" for="transform">100<span>%</span></output></div>
+          <input id="transform" class="range" type="range" min="0" max="100" step="1" value="100" aria-label="展开程度">
+          <div class="range-ends"><span>收拢</span><span>展开</span></div>
+          <button id="btnDemo" class="wide-button" type="button" aria-pressed="false"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M14.9 7A6 6 0 0 0 4 5L2.5 7M3.1 11A6 6 0 0 0 14 13l1.5-2M2.5 3.8V7h3.2M15.5 14.2V11h-3.2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>自动变形</span></button>
+        </div>
+
+        <div class="control-section">
+          <div class="section-heading"><span class="section-index">02</span><h2>动作</h2></div>
+          <button id="btnWalk" class="wide-button walk-button" type="button" aria-pressed="false"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m6 3 7 6-7 6V3Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></svg><span>自动行走</span></button>
+          <div class="slider-label speed-label"><label for="speed">行走速度</label><output id="speedValue" for="speed">0.8<span>×</span></output></div>
+          <input id="speed" class="range" type="range" min="0.3" max="1.5" step="0.1" value="0.8" aria-label="行走速度">
+          <div class="movement-control">
+            <div class="movement-copy"><span>按住移动</span><small>W / S 前后移动<br>A / D 转向</small></div>
+            <div class="direction-pad" role="group" aria-label="按住控制移动或转向">
+              <button type="button" data-move="forward" class="move-forward" aria-label="向前移动，按住 W" title="前进 · W"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 9 4-4 4 4M8 5v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button type="button" data-move="left" class="move-left" aria-label="向左转，按住 A" title="左转 · A"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m6 3-3 3 3 3M3 6h5a4 4 0 0 1 4 4v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button type="button" data-move="back" class="move-back" aria-label="向后移动，按住 S" title="后退 · S"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 7 4 4 4-4M8 11V3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <button type="button" data-move="right" class="move-right" aria-label="向右转，按住 D" title="右转 · D"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m10 3 3 3-3 3m3-3H8a4 4 0 0 0-4 4v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </div>
+          </div>
+          <div class="space-hint"><kbd>Space</kbd><span>切换形态</span></div>
+        </div>
+
+        <div class="control-section details-section">
+          <div class="section-heading"><span class="section-index">03</span><h2>观察与保存</h2></div>
+          <div class="utility-row">
+            <button id="btnXray" class="utility-button" type="button" aria-pressed="false"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m9 2 6 3.5v7L9 16l-6-3.5v-7L9 2Z" stroke="currentColor" stroke-width="1.15"/><path d="m3 5.5 6 3.6 6-3.6M9 9.1V16M9 2v7" stroke="currentColor" stroke-width="1.05" stroke-dasharray="2 1.5"/></svg><span>查看内部</span></button>
+            <button id="btnReset" class="utility-button" type="button"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3.2 7A6 6 0 1 1 3 10M3.2 3.5V7h3.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>重置</span></button>
+          </div>
+          <button id="btnExport" class="export-button" type="button"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v9m-3-3 3 3 3-3M3 11v4h12v-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>导出动画模型</span><svg class="export-arrow" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 9h10m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button id="btnShot" class="shot-button" type="button"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m6.5 4 1-1.5h3l1 1.5H15v10H3V4h3.5Z" stroke="currentColor" stroke-width="1.15" stroke-linejoin="round"/><circle cx="9" cy="8.7" r="2.7" stroke="currentColor" stroke-width="1.15"/></svg><span>保存画面</span></button>
+        </div>
+      </aside>
+    </main>
+    <footer class="page-footer"><p>照片参考 · 固定连杆与落脚支撑演示；内部结构及尺寸为估算，未作动力学验证。</p><span>KECHUANG FAN · ENERGY CIRCUIT</span></footer>
+  </div>
+  <!-- SCRIPTS -->
+</body>
+</html>

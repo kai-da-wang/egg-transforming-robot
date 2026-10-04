@@ -1,0 +1,22 @@
+const {chromium}=require('C:/Users/LENOVO/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const path=require('path'),fs=require('fs'),assert=require('assert');
+(async()=>{
+  const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+  const page=await browser.newPage({viewport:{width:1440,height:1000},deviceScaleFactor:1.5});
+  const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});page.on('request',r=>{if(r.url().startsWith('http'))requests.push(r.url());});
+  await page.goto('file:///'+path.resolve(__dirname,'../outputs/蛋形机器人-交互演示.html').replaceAll('\\','/'));await page.waitForFunction(()=>window.eggDemo?.ready);
+  const stats=await page.evaluate(()=>{let emitters=0;eggDemo.rig.robot.traverse(o=>{if(o.userData.energyLight)emitters++;});return {emitters,emissiveIntensity:eggDemo.rig.materials.neon.emissiveIntensity,hasLogo:!!document.querySelector('#sceneBrand svg')};});
+  assert(stats.emitters>25);assert(stats.hasLogo);
+  await page.click('#btnClosed');await page.waitForFunction(()=>eggDemo.state.deploy===0);
+  await page.screenshot({path:path.join(__dirname,'neon-closed.png')});
+  await page.click('#btnOpen');await page.waitForFunction(()=>eggDemo.state.deploy===1);
+  await page.click('#btnWalk');await page.waitForTimeout(1100);assert(await page.evaluate(()=>eggDemo.state.walk&&eggDemo.state.phase>0));await page.click('#btnReset');
+  await page.evaluate(()=>document.getElementById('toast').classList.remove('show'));await page.waitForTimeout(300);
+  const imagePromise=page.waitForEvent('download');await page.click('#btnShot');const image=await imagePromise;await image.saveAs(path.join(__dirname,'../outputs/科创-凡-霓虹机器人.png'));
+  const modelPromise=page.waitForEvent('download');await page.click('#btnExport');const model=await modelPromise;await model.saveAs(path.join(__dirname,'../outputs/蛋形变形机器人.glb'));
+  const buffer=fs.readFileSync(path.join(__dirname,'../outputs/蛋形变形机器人.glb')),json=JSON.parse(buffer.subarray(20,20+buffer.readUInt32LE(12)).toString());assert.equal(json.animations.length,4);
+  const emissive=json.materials.filter(m=>m.emissiveFactor?.some(v=>v>0));assert(emissive.length>0);assert(json.nodes.some(n=>n.name==='Dome_energy_loop_0_emitter'));assert(json.nodes.some(n=>n.name==='Foot_energy_loop_0_emitter'));
+  await page.evaluate(()=>document.getElementById('toast').classList.remove('show'));await page.waitForTimeout(300);await page.screenshot({path:path.join(__dirname,'../outputs/蛋形机器人-预览.png')});
+  await page.setViewportSize({width:390,height:844});await page.waitForTimeout(200);await page.screenshot({path:path.join(__dirname,'neon-mobile.png'),fullPage:true});assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  const report={...stats,errors,networkRequests:requests,exportedNodes:json.nodes.length,exportedMeshes:json.meshes.length,animations:json.animations.map(a=>a.name),emissive,bytes:buffer.length};console.log(JSON.stringify(report,null,2));fs.writeFileSync(path.join(__dirname,'neon-verification.json'),JSON.stringify(report,null,2));assert.equal(errors.length,0);assert.equal(requests.length,0);await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});
